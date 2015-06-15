@@ -18,11 +18,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
-NeoBundleFetch 'Shougo/unite.vim'
-NeoBundleFetch 'Shougo/vimproc.vim'
-"NeoBundleFetch 'altercation/vim-colors-solarized.git'
-NeoBundleFetch 'msanders/snipmate.vim'
-NeoBundleFetch 'mileszs/ack.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim'
+"NeoBundle 'altercation/vim-colors-solarized.git'
+NeoBundle 'msanders/snipmate.vim'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'stephpy/vim-yaml'
 
 call neobundle#end()
 
@@ -56,6 +57,9 @@ set backspace=indent,eol,start
 set laststatus=2
 "set relativenumber
 set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=10000
+set undoreload=10000
 
 " set my leader
 let mapleader = ";"
@@ -80,7 +84,7 @@ set colorcolumn=85
 
 " list mode
 "set list
-"set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬
 
 " disable help
 inoremap <F1> <ESC>
