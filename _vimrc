@@ -24,6 +24,7 @@ NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'msanders/snipmate.vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'stephpy/vim-yaml'
+NeoBundle 'pearofducks/ansible-vim'
 
 call neobundle#end()
 
