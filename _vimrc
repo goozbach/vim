@@ -1,40 +1,47 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
-if has('vim_starting')
+"dein Scripts-----------------------------
+if &compatible
   set nocompatible               " Be iMproved
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" Let NeoBundle manage NeoBundle
 " Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+if dein#load_state("$HOME/.vim/dein")
+  call dein#begin("$HOME/.vim/dein")
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc.vim'
-"NeoBundle 'altercation/vim-colors-solarized.git'
-NeoBundle 'msanders/snipmate.vim'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'stephpy/vim-yaml'
-NeoBundle 'pearofducks/ansible-vim'
+  " Let dein manage dein
+  " Required:
+  call dein#add("$HOME/.vim/dein/repos/github.com/Shougo/dein.vim")
 
-call neobundle#end()
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/vimproc.vim')
+  call dein#add('altercation/vim-colors-solarized.git')
+  call dein#add('msanders/snipmate.vim')
+  call dein#add('mileszs/ack.vim')
+  call dein#add('stephpy/vim-yaml')
+  call dein#add('pearofducks/ansible-vim')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
 
+"End dein Scripts-------------------------
+
+" ------ my stuff ------ 
 " tabstop
 set tabstop=4
 set shiftwidth=4
@@ -52,6 +59,7 @@ set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
+set cursorcolumn
 set ttyfast
 "set ruler
 set backspace=indent,eol,start
