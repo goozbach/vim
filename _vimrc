@@ -104,3 +104,6 @@ vnoremap <F1> <ESC>
 syntax enable
 set background=dark
 colorscheme solarized
+
+" turn off the fucking mouse
+set mouse-=a
